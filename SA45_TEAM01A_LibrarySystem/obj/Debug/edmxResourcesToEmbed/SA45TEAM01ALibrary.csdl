@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SA45TEAM01ALibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="booklist">
+    <Key>
+      <PropertyRef Name="Book_ID" />
+    </Key>
+    <Property Name="ISBN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Book_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Language" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Author" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Year_of_Publication" Type="Int32" />
+    <Property Name="Disposed" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Issue_Details" Relationship="Self.FK_Issue_Details_Users" FromRole="booklist" ToRole="Issue_Details" />
+  </EntityType>
+  <EntityType Name="Issue_Details">
+    <Key>
+      <PropertyRef Name="Issue_ID" />
+    </Key>
+    <Property Name="Issue_ID" Type="Int32" Nullable="false" />
+    <Property Name="Issue_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Due_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Book_ID" Type="Int32" Nullable="false" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="Rental_Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Return_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="booklist" Relationship="Self.FK_Issue_Details_Users" FromRole="Issue_Details" ToRole="booklist" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Issue_Details_Users1" FromRole="Issue_Details" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Librarian">
+    <Key>
+      <PropertyRef Name="User_Name" />
+    </Key>
+    <Property Name="User_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone_no" Type="Int32" />
+    <Property Name="Book_due" Type="Int32" />
+    <Property Name="Category" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Issue_Details" Relationship="Self.FK_Issue_Details_Users1" FromRole="Users" ToRole="Issue_Details" />
+  </EntityType>
+  <Association Name="FK_Issue_Details_Users">
+    <End Role="booklist" Type="Self.booklist" Multiplicity="1" />
+    <End Role="Issue_Details" Type="Self.Issue_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="booklist">
+        <PropertyRef Name="Book_ID" />
+      </Principal>
+      <Dependent Role="Issue_Details">
+        <PropertyRef Name="Book_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Issue_Details_Users1">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Issue_Details" Type="Self.Issue_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Issue_Details">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SA45TEAM01ALibraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="booklists" EntityType="Self.booklist" />
+    <EntitySet Name="Issue_Details" EntityType="Self.Issue_Details" />
+    <EntitySet Name="Librarians" EntityType="Self.Librarian" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Issue_Details_Users" Association="Self.FK_Issue_Details_Users">
+      <End Role="booklist" EntitySet="booklists" />
+      <End Role="Issue_Details" EntitySet="Issue_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Issue_Details_Users1" Association="Self.FK_Issue_Details_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Issue_Details" EntitySet="Issue_Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

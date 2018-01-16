@@ -1,0 +1,14 @@
+c:\users\user\documents\visual studio 2015\Projects\ClassLibrary3\ClassLibrary3\bin\Debug\ClassLibrary3.dll
+c:\users\user\documents\visual studio 2015\Projects\ClassLibrary3\ClassLibrary3\bin\Debug\ClassLibrary3.pdb
+c:\users\user\documents\visual studio 2015\Projects\ClassLibrary3\ClassLibrary3\obj\Debug\ClassLibrary3.dll
+c:\users\user\documents\visual studio 2015\Projects\ClassLibrary3\ClassLibrary3\obj\Debug\ClassLibrary3.pdb
+C:\Users\User\Desktop\ISS\Lessons\Part 5 (Venkat)\CA Project\SaveMessage()\ClassLibrary3\bin\Debug\ClassLibrary3.dll
+C:\Users\User\Desktop\ISS\Lessons\Part 5 (Venkat)\CA Project\SaveMessage()\ClassLibrary3\bin\Debug\ClassLibrary3.pdb
+C:\Users\User\Desktop\ISS\Lessons\Part 5 (Venkat)\CA Project\SaveMessage()\ClassLibrary3\obj\Debug\ClassLibrary3.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\ISS\Lessons\Part 5 (Venkat)\CA Project\SaveMessage()\ClassLibrary3\obj\Debug\ClassLibrary3.dll
+C:\Users\User\Desktop\ISS\Lessons\Part 5 (Venkat)\CA Project\SaveMessage()\ClassLibrary3\obj\Debug\ClassLibrary3.pdb
+C:\Users\User\Desktop\ISS\Lessons\Part 5 (Venkat)\CA Project\CL3\ClassLibrary3\obj\Debug\ClassLibrary3.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\ISS\Lessons\Part 5 (Venkat)\CA Project\CL3\ClassLibrary3\obj\Debug\ClassLibrary3.dll
+C:\Users\User\Desktop\ISS\Lessons\Part 5 (Venkat)\CA Project\CL3\ClassLibrary3\obj\Debug\ClassLibrary3.pdb
+C:\Users\User\Desktop\ISS\Lessons\Part 5 (Venkat)\CA Project\CL3\ClassLibrary3\bin\Debug\ClassLibrary3.dll
+C:\Users\User\Desktop\ISS\Lessons\Part 5 (Venkat)\CA Project\CL3\ClassLibrary3\bin\Debug\ClassLibrary3.pdb
